@@ -115,7 +115,7 @@ export default (props = {}) => {
                 <NavItem title="View Recipe" link={Routes.Forms.path} />
                 
               </CollapsableNavItem>
-              <CollapsableNavItem eventKey="extra/" title="Extra" icon={faTable}>
+              {/* <CollapsableNavItem eventKey="extra/" title="Extra" icon={faTable}>
                 <NavItem title="Breadcrumbs" link={Routes.Breadcrumbs.path} />
                 <NavItem title="Buttons" link={Routes.Buttons.path} />
                 <NavItem title="Badges" link={Routes.Badges.path} />
@@ -130,8 +130,8 @@ export default (props = {}) => {
                 <NavItem title="Tooltips" link={Routes.Tooltips.path} />
                 <NavItem title="Bootstrap Table" link={Routes.BootstrapTables.path} />
 
-              </CollapsableNavItem>
-              <CollapsableNavItem eventKey="examples/" title="Page Examples" icon={faFileAlt}>
+              </CollapsableNavItem> */}
+              {/* <CollapsableNavItem eventKey="examples/" title="Page Examples" icon={faFileAlt}>
                 <NavItem title="Sign In" link={Routes.Signin.path} />
                 <NavItem title="Sign Up" link={Routes.Signup.path} />
                 <NavItem title="Forgot password" link={Routes.ForgotPassword.path} />
@@ -139,9 +139,9 @@ export default (props = {}) => {
                 <NavItem title="Lock" link={Routes.Lock.path} />
                 <NavItem title="404 Not Found" link={Routes.NotFound.path} />
                 <NavItem title="500 Server Error" link={Routes.ServerError.path} />
-              </CollapsableNavItem>
+              </CollapsableNavItem> */}
               <NavItem title="Transactions" icon={faHandHoldingUsd} link={Routes.Transactions.path} />
-              <NavItem title="Settings" icon={faCog} link={Routes.Settings.path} />
+              {/* <NavItem title="Settings" icon={faCog} link={Routes.Settings.path} /> */}
               {/* <NavItem external title="Plugins" link="https://demo.themesberg.com/volt-pro-react/#/plugins/datatable" target="_blank" badgeText="Pro" icon={faChartPie} /> */}
 
               {/* <Dropdown.Divider className="my-3 border-indigo" /> */}

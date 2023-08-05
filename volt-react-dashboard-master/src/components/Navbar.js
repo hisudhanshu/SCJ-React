@@ -1,4 +1,4 @@
-
+import { Link } from 'react-router-dom';
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBell, faCog, faEnvelopeOpen, faSearch, faSignOutAlt, faUserShield } from "@fortawesome/free-solid-svg-icons";
@@ -94,7 +94,9 @@ export default (props) => {
               </Dropdown.Toggle>
               <Dropdown.Menu className="user-dropdown dropdown-menu-right mt-2">
                 <Dropdown.Item className="fw-bold">
+                <Link to="/settings" className="">
                   <FontAwesomeIcon icon={faUserCircle} className="me-2" /> My Profile
+                  </Link>
                 </Dropdown.Item>
                 {/* <Dropdown.Item className="fw-bold">
                   <FontAwesomeIcon icon={faCog} className="me-2" /> Settings
@@ -108,7 +110,9 @@ export default (props) => {
                 <Dropdown.Divider /> */}
 
                 <Dropdown.Item className="fw-bold">
-                  <FontAwesomeIcon icon={faSignOutAlt} className="text-danger me-2" /> Logout
+                <Link to="/examples/sign-in" className="text-danger">
+                    <FontAwesomeIcon icon={faSignOutAlt} className="text-danger me-2" /> Logout
+                  </Link>
                 </Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
