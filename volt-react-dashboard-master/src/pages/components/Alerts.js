@@ -1,186 +1,99 @@
 
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBullhorn } from '@fortawesome/free-solid-svg-icons';
-import { Col, Row, Alert, Button, Container } from '@themesberg/react-bootstrap';
-
-import Documentation from "../../components/Documentation";
+import { Row, Col, Container, Modal, Button, Card } from '@themesberg/react-bootstrap';
 
 export default () => {
   return (
     <article>
-      <Container className="px-0">
+        <Container className="px-0">
         <Row className="d-flex flex-wrap flex-md-nowrap align-items-center py-4">
           <Col className="d-block mb-4 mb-md-0">
-            <h1 className="h2">Alerts</h1>
-            <p className="mb-0">
-              Use alerts to provide contextual feedback to your users based on their input and behaviour.
-        </p>
+            <h3 className="h3">
+              <strong style={{ fontFamily: 'Georgia, Times New Roman, Times, serif' }}>Create Recipe</strong>
+            </h3>
           </Col>
         </Row>
 
-        <Documentation
-          title="Example"
-          description={
-            <p>The <code>&#x3C;Alert&#x3E;</code> component can be used to show your users error, success, informational or warning messages. Use component properties such as  <code>variant="primary</code> or <code>variant="secondary"</code> to use the colors from the Sass variables:</p>
-          }
-          scope={{ Alert }}
-          imports={`import { Alert } from '@themesberg/react-bootstrap';`}
-          example={`<React.Fragment>
-  <Alert variant="primary">
-    A simple primary alert — check it out!
-  </Alert>
-  <Alert variant="secondary">
-    A simple secondary alert — check it out!
-  </Alert>
-  <Alert variant="success">
-    A simple success alert — check it out!
-  </Alert>
-  <Alert variant="danger">
-    A simple danger alert — check it out!
-  </Alert>
-  <Alert variant="warning">
-    A simple warning alert — check it out!
-  </Alert>
-  <Alert variant="info">
-    A simple info alert — check it out!
-  </Alert>
-  <Alert variant="light">
-    A simple light alert — check it out!
-  </Alert>
-  <Alert variant="dark">
-    A simple dark alert — check it out!
-  </Alert>
-</React.Fragment>`}
-        />
-
-        <Documentation
-          title="Dismissable alerts"
-          description={
-            <p>The <code>&#x3C;Alert&#x3E;</code> component can be used to create an alert component that can be closed by clicking on the close icon by adding the <code>show</code> and <code>onClose</code> properties. Additionally, you can also use the <code>&#x3C;FontAwesomeIcon&#x3E;</code> component to add an icon inside the alert component.</p>
-          }
-          scope={{ Alert, Button, FontAwesomeIcon, faBullhorn }}
-          imports={`import { Alert, Button } from '@themesberg/react-bootstrap';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBullhorn } from "@fortawesome/free-solid-svg-icons";`}
-          example={`function DismissableAlerts() {
-  const [hiddenAlerts, setHiddenAlerts] = React.useState([]);
-
-  const onClose = (alertId) => {
-    const hiddenAlertsUpdated = [...hiddenAlerts, alertId];
-    setHiddenAlerts(hiddenAlertsUpdated);
-  };
-
-  const shouldShowAlert = (alertId) => (
-    hiddenAlerts.indexOf(alertId) === -1
-  );
-
-  return(
-    <React.Fragment>
-      <Alert
-        variant="primary"
-        show={shouldShowAlert("primary")}
-        onClose={() => onClose("primary")}>
-
-        <div className="d-flex justify-content-between">
-          <div>
-            <FontAwesomeIcon icon={faBullhorn} className="me-1" />
-            <strong>Holy guacamole!</strong> You should check in on some of those fields below.
-          </div>
-          <Button variant="close" size="xs" onClick={() => onClose("primary")} />
-        </div>
-      </Alert>
-
-      <Alert
-        variant="secondary"
-        show={shouldShowAlert("secondary")}
-        onClose={() => onClose("secondary")}>
-
-        <div className="d-flex justify-content-between">
-          <div>
-            <FontAwesomeIcon icon={faBullhorn} className="me-1" />
-            <strong>Holy guacamole!</strong> You should check in on some of those fields below.
-          </div>
-          <Button variant="close" size="xs" onClick={() => onClose("secondary")} />
-        </div>
-      </Alert>
-      
-      <Alert
-        variant="danger"
-        show={shouldShowAlert("danger")}
-        onClose={() => onClose("danger")}>
-
-        <div className="d-flex justify-content-between">
-          <div>
-            <FontAwesomeIcon icon={faBullhorn} className="me-1" />
-            <strong>Holy guacamole!</strong> You should check in on some of those fields below.
-          </div>
-          <Button variant="close" size="xs" onClick={() => onClose("danger")} />
-        </div>
-      </Alert>
-
-      <Alert
-        variant="success"
-        show={shouldShowAlert("success")}
-        onClose={() => onClose("success")}>
-
-        <div className="d-flex justify-content-between">
-          <div>
-            <FontAwesomeIcon icon={faBullhorn} className="me-1" />
-            <strong>Holy guacamole!</strong> You should check in on some of those fields below.
-          </div>
-          <Button variant="close" size="xs" onClick={() => onClose("success")} />
-        </div>
-      </Alert>
-
-      <Alert
-        variant="warning"
-        show={shouldShowAlert("warning")}
-        onClose={() => onClose("warning")}>
-
-        <div className="d-flex justify-content-between">
-          <div>
-            <FontAwesomeIcon icon={faBullhorn} className="me-1" />
-            <strong>Holy guacamole!</strong> You should check in on some of those fields below.
-          </div>
-          <Button variant="close" size="xs" onClick={() => onClose("warning")} />
-        </div>
-      </Alert>
-
-      <Alert
-        variant="light"
-        show={shouldShowAlert("light")}
-        onClose={() => onClose("light")}>
-
-        <div className="d-flex justify-content-between">
-          <div>
-            <FontAwesomeIcon icon={faBullhorn} className="me-1" />
-            <strong>Holy guacamole!</strong> You should check in on some of those fields below.
-          </div>
-          <Button variant="close" size="xs" onClick={() => onClose("light")} />
-        </div>
-      </Alert>
-
-      <Alert
-        variant="dark"
-        show={shouldShowAlert("dark")}
-        onClose={() => onClose("dark")}>
-
-        <div className="d-flex justify-content-between">
-          <div>
-            <FontAwesomeIcon icon={faBullhorn} className="me-1" />
-            <strong>Holy guacamole!</strong> You should check in on some of those fields below.
-          </div>
-          <Button variant="close" size="xs" onClick={() => onClose("dark")} />
-        </div>
-      </Alert>
-    </React.Fragment>
-  );
-}
-
-render( <DismissableAlerts /> );`}
-        />
+        <Card border="light" className="shadow-sm mb-4">
+          <Card.Body>
+            <Row style={{ fontFamily: "Georgia, 'Times New Roman', Times, serif" }}>
+              <Col lg={12}>
+                <Row>
+                  <Col md={4} style={{ marginTop: '30px' }}>
+                    <label htmlFor="Category">Product Category</label>
+                    <select className="form-control" id="Category">
+                      <option value="select">--Select--</option>
+                      <option value="category1">Category 1</option>
+                      <option value="category2">Category 2</option>
+                      <option value="category3">Category 3</option>
+                    </select>
+                  </Col>
+                  <Col md={4} style={{ marginTop: '30px' }}>
+                    <label htmlFor="Brand">Product Brand</label>
+                    <select className="form-control" id="Brand">
+                    <option value="select">--Select--</option>
+                      <option value="brand1">Brand 1</option>
+                      <option value="brand2">Brand 2</option>
+                      <option value="brand3">Brand 3</option>
+                    </select>
+                  </Col>
+                  <Col md={4} style={{ marginTop: '30px' }}>
+                    <label htmlFor="product">Product Name</label>
+                    <select className="form-control" id="product">
+                    <option value="select">--Select--</option>
+                      <option value="product1">Product 1</option>
+                      <option value="product2">Product 2</option>
+                      <option value="product3">Product 3</option>
+                    </select>
+                  </Col>
+                  <Col md={4} style={{ marginTop: '30px' }}>
+                    <label htmlFor="customer">Customer Name</label>
+                    <select className="form-control" id="customer">
+                    <option value="select">--Select--</option>
+                      <option value="customer1">Customer 1</option>
+                      <option value="customer2">Customer 2</option>
+                      <option value="customer3">Customer 3</option>
+                    </select>
+                  </Col>
+                  <Col md={4} style={{ marginTop: '30px' }}>
+                    <label htmlFor="clientType">Client Type</label>
+                    <select className="form-control" id="clientType">
+                    <option value="select">--Select--</option>
+                      <option value="type1">Type 1</option>
+                      <option value="type2">Type 2</option>
+                      <option value="type3">Type 3</option>
+                    </select>
+                  </Col>
+                  <Col md={4} style={{ marginTop: '30px' }}>
+                    <label htmlFor="selectmaterial">Select Material</label>
+                    <select className="form-control" id="selectmaterial">
+                    <option value="select">--Select--</option>
+                      <option value="material1">Material 1</option>
+                      <option value="material2">Material 2</option>
+                      <option value="material3">Material 3</option>
+                    </select>
+                  </Col>
+                </Row>
+              </Col>
+            </Row>
+          </Card.Body>
+          <br /><br />
+          <Card.Footer className="text-end">
+            {/* <Button className="btn btn-primary" style={{ paddingInline: '30px' }}>
+              Add
+            </Button> */}
+            <Button variant="tertiary" className="m-1">Submit</Button>
+          </Card.Footer>
+          <br />
+        </Card>
       </Container>
+
+      <Modal as="div" centered show={false} id="exampleModalToggle" aria-labelledby="exampleModalToggleLabel">
+        <Modal.Header>
+          <Modal.Title id="exampleModalToggleLabel">Modal Title</Modal.Title>
+          <Button variant="secondary" data-bs-dismiss="modal" aria-label="Close"></Button>
+        </Modal.Header>
+      </Modal>
     </article>
   );
 };
