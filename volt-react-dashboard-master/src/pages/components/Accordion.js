@@ -2,6 +2,7 @@ import React from 'react';
 import { Row, Col, Container, Modal, Button, Table, Card } from '@themesberg/react-bootstrap';
 
 const RawMaterialPage = () => (
+  
   <article>
     <Container className="px-0">
       <Row className="d-flex flex-wrap flex-md-nowrap align-items-center py-4">
